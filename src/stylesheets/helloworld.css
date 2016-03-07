@@ -1,10 +1,23 @@
 body {
+  color: white;
+  font-family: Lato;
+  font-weight: 300;
   margin: 0;
   padding: 0; }
 
-div {
+div.react-unit {
+  border-bottom: solid 3px white;
+  padding: 20px;
   text-align: center; }
-  div li {
+  div.react-unit ul {
+    padding: 0; }
+  div.react-unit li {
     list-style-type: none; }
+  div.react-unit#counter {
+    background: rgba(181, 137, 0, 0.7); }
+  div.react-unit#message {
+    background: rgba(203, 75, 22, 0.7); }
+  div.react-unit#filter-list {
+    background: rgba(220, 50, 47, 0.7); }
 
 /*# sourceMappingURL=helloworld.css.map */

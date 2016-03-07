@@ -1,12 +1,38 @@
+// Colors
+$yellow: rgba(181, 137, 0, 0.7);
+$orange: rgba(203, 75, 22, 0.7);
+$red: rgba(220, 50, 47, 0.7);
+
 body {
+    color: white;
+    font-family: Lato;
+    font-weight: 300;
     margin: 0;
     padding: 0;
 }
 
-div {
+div.react-unit{
+    border-bottom: solid 3px white;
+    padding: 20px;
     text-align: center;
+
+    ul {
+        padding: 0;
+    }
 
     li {
         list-style-type:none
+    }
+
+    &#counter {
+        background: $yellow;
+    }
+
+    &#message {
+        background: $orange;
+    }
+
+    &#filter-list {
+        background: $red;
     }
 }

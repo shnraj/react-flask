@@ -40,7 +40,7 @@ var Textbox = React.createClass({
                     placeholder="Type a message"
                     onChange={this.handleChange}
                 />
-                <h1>Message: {this.state.value}</h1>
+                <h2>Message: {this.state.value}</h2>
             </div>
         );
     }
