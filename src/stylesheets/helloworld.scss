@@ -3,10 +3,16 @@ $yellow: rgba(181, 137, 0, 0.7);
 $orange: rgba(203, 75, 22, 0.7);
 $red: rgba(220, 50, 47, 0.7);
 
-body {
-    color: white;
+@mixin font($size) {
     font-family: Lato;
     font-weight: 300;
+    font-size: $size;
+}
+
+body {
+    @include font(14px);
+
+    color: white;
     margin: 0;
     padding: 0;
 }
@@ -37,11 +43,11 @@ div.react-unit{
     }
 
     input {
+        @include font(16px);
+
         border: none;
-        line-height: 25px;
-        font-family: Lato;
-        font-size: 18px;
-        font-weight: 300;
+        line-height: 21px;
+        padding: 5px;
 
         &:focus {
             outline: none;
