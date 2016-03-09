@@ -35,4 +35,16 @@ div.react-unit{
     &#filter-list {
         background: $red;
     }
+
+    input {
+        border: none;
+        line-height: 25px;
+        font-family: Lato;
+        font-size: 18px;
+        font-weight: 300;
+
+        &:focus {
+            outline: none;
+        }
+    }
 }

@@ -19,5 +19,13 @@ div.react-unit {
     background: rgba(203, 75, 22, 0.7); }
   div.react-unit#filter-list {
     background: rgba(220, 50, 47, 0.7); }
+  div.react-unit input {
+    border: none;
+    line-height: 25px;
+    font-family: Lato;
+    font-size: 18px;
+    font-weight: 300; }
+    div.react-unit input:focus {
+      outline: none; }
 
 /*# sourceMappingURL=helloworld.css.map */
