@@ -111,6 +111,54 @@ var List = React.createClass({
     }
 });
 
+/*
+ * TODO List
+ */
+var Todo = React.createClass({
+    getInitialState: function () {
+        return {
+            items: [
+                'Add remove todo functionality'
+            ]
+        };
+    },
+    addTodo: function(event) {
+        event.preventDefault()
+        // NEVER mutate this.state directly
+        var new_items = [].concat(this.state.items);
+        // Is there a better way to get input value other than refs?
+        var todo = this.refs.input.value
+        this.refs.input.value = ''
+        new_items.push(todo)
+        this.setState({items: new_items});
+    },
+    render: function(){
+        return (
+            <div className="todo">
+                <form onSubmit={this.addTodo}>
+                    <input type="text" ref="input" placeholder="Filter search" />
+                    <input type="submit" value="Add" />
+                </form>
+                <TodoList items={this.state.items} />
+            </div>
+        );
+    }
+});
+
+var TodoList = React.createClass({
+    render: function() {
+        return (
+            <ul>
+            {
+                this.props.items.map(function(item) {
+                    return <li>{item}</li>
+                })
+            }
+            </ul>
+        );
+    }
+});
+
 ReactDOM.render(
     <Counter />,
     document.getElementById('counter'));
@@ -120,6 +168,10 @@ ReactDOM.render(
     document.getElementById('message'));
 
 ReactDOM.render(
-    <FilteredList/>,
+    <FilteredList />,
     document.getElementById('filter-list'));
+
+ReactDOM.render(
+    <Todo />,
+    document.getElementById('todo'));
 

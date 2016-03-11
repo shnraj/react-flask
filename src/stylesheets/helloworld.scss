@@ -2,6 +2,7 @@
 $yellow: rgba(181, 137, 0, 0.7);
 $orange: rgba(203, 75, 22, 0.7);
 $red: rgba(220, 50, 47, 0.7);
+$magenta: rgba(211, 54, 130, 0.7);
 
 @mixin font($size) {
     font-family: Lato;
@@ -40,6 +41,10 @@ div.react-unit{
 
     &#filter-list {
         background: $red;
+    }
+
+    &#todo {
+        background: $magenta;
     }
 
     input {
