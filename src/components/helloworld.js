@@ -132,29 +132,41 @@ var Todo = React.createClass({
         new_items.push(todo)
         this.setState({items: new_items});
     },
+    removeTodo: function(i) {
+        var new_items = [].concat(this.state.items);
+        new_items.splice(i, 1);
+        this.setState({items: new_items});
+    },
     render: function(){
         return (
             <div className="todo">
                 <form onSubmit={this.addTodo}>
-                    <input type="text" ref="input" placeholder="Filter search" />
+                    <input type="text" ref="input" placeholder="Add todo" />
                     <input type="submit" value="Add" />
                 </form>
-                <TodoList items={this.state.items} />
+                <TodoList items={this.state.items} removeTodo={this.removeTodo}/>
             </div>
         );
     }
 });
 
 var TodoList = React.createClass({
+    propTypes: {
+        removeTodo: React.PropTypes.func
+    },
+    removeTodo: function(event) {
+        var todo_index = parseInt(event.target.className);
+        this.props.removeTodo(todo_index)
+    },
     render: function() {
         return (
-            <ul>
+            <div>
             {
-                this.props.items.map(function(item) {
-                    return <li>{item}</li>
-                })
+                this.props.items.map(function(item, i) {
+                    return (<div key={i} className={i} onClick={this.removeTodo}>{item}</div>);
+                }, this)
             }
-            </ul>
+            </div>
         );
     }
 });
