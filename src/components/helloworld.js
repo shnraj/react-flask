@@ -155,7 +155,7 @@ var TodoList = React.createClass({
         removeTodo: React.PropTypes.func
     },
     removeTodo: function(event) {
-        var todo_index = parseInt(event.target.className);
+        var todo_index = parseInt(event.target.id);
         this.props.removeTodo(todo_index)
     },
     render: function() {
@@ -163,7 +163,8 @@ var TodoList = React.createClass({
             <div>
             {
                 this.props.items.map(function(item, i) {
-                    return (<div key={i} className={i} onClick={this.removeTodo}>{item}</div>);
+
+                    return (<div id={i} key={i} className='todo-item' onClick={this.removeTodo}>{item}</div>);
                 }, this)
             }
             </div>

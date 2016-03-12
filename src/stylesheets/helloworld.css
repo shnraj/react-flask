@@ -22,6 +22,10 @@ div.react-unit {
     background: rgba(220, 50, 47, 0.7); }
   div.react-unit#todo {
     background: rgba(211, 54, 130, 0.7); }
+    div.react-unit#todo form {
+      padding-bottom: 15px; }
+    div.react-unit#todo .todo-item {
+      padding: 2px; }
   div.react-unit input {
     font-family: Lato;
     font-weight: 300;

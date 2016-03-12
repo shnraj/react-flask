@@ -45,6 +45,14 @@ div.react-unit{
 
     &#todo {
         background: $magenta;
+
+        form {
+            padding-bottom: 15px;
+        }
+
+        .todo-item {
+            padding: 2px;
+        }
     }
 
     input {
